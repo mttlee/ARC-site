@@ -1,6 +1,6 @@
 body{
   color: #fff;
-  background: linear-gradient(rgba(223,224,228,255), rgb(243, 255, 250));
+  background: linear-gradient(#fff, #fff);
   background-size: contain;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
@@ -21,6 +21,7 @@ img{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  animation: fadeInAnimation ease 3s;
 }
 
 @keyframes slideAnimation {
@@ -46,34 +47,47 @@ img{
 }
 
 main{
-  padding: 10px;
+  padding: 0px;
   max-width: 100%;
   margin: 0 auto;
 }
 
 header{
+  background: linear-gradient(rgba(256, 256, 256, 1.0), rgba(256, 256, 256, 0.4));
   position: sticky;
-  top: 15px;
+  padding: 20px;
+  top: 0px;
   z-index: 1;
   display:flex;
   justify-content: space-between;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  /* margin-bottom: 10px;
+  margin-top: 15px; */
+  height: 65px;
   font-size: larger;
-
-  max-width: 98%;
+  align-items: center;
+  max-width: 100%;
+  z-index: 2;
 }
 
-header a{
+header a {
+  color: #bbb;
   text-decoration: none;
   color: inherit;
+  font-weight: lighter;
   font-size: larger;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header a.logo{
-  font-weight: bold;
+  font-weight: 500;
   font-size:larger;
+  color: #bbb;
+}
+
+header a.logo:visited {
+  font-weight: 500;
+  font-size:larger;
+  color: #bbb;
 }
 
 header nav{
@@ -85,21 +99,31 @@ header nav{
 footer {
   display:flex;
   justify-content: space-between;
+  padding: 10px;
   margin-bottom: 5px;
   margin-top: 15px;
   font-size: larger;
-  text-shadow: 1px 1px #000;
+  color:#000;
+  font-weight: lighter;
+  text-shadow: 1px 1px #bbb;
 }
 
 .subheader {
   font-size: xx-large;
   text-align: center;
+  animation: fadeInAnimation ease 2s;
 }
 
 .nav-link {
   opacity: 1.0;
   animation-name: fadeInAnimation;
   animation-delay: 10s;
+  color: #bbb
+}
+
+.nav-link:visited {
+  color: #bbb;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -110,6 +134,23 @@ footer {
   position: relative;
   text-align: center;
   color: white;
+}
+
+.container div {
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.container i {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  font-size: 100px;
+  transition: all 0.4s ease;
+}
+
+.container i:active {
+  transform: rotateZ(-180deg);
 }
 
 .centered {
@@ -135,46 +176,198 @@ footer {
   animation: fadeInAnimation ease 5s forwards;
 }
 
-.box {
-  /* background-image: url(floral-background.jpg); */
-  background-color: rgb(120, 101, 129);
-  width: 40%;
-  height: 40px;
+.banner0 {
+  background-image: url(landscape_view.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  margin: 50px auto;
+  margin-top: 15px;
+  opacity: 1.0;
+}
+
+.banner1 {
+  align-items: center;
+  background-image: url(brickwall.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  margin: 50px auto;
+  opacity: 0.7;
+}
+
+.banner2 {
+  background:rgb(249, 233, 131);
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  margin: 50px auto;
+  opacity: 1.0;
+}
+
+.banner-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  text-shadow: 1px 1px #555;
+  animation: fadeInAnimation ease 2s forwards;
+  /* animation: fadeInAnimation ease 3s; */
+}
+
+.title-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: 100px;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: lighter;
+  color: #000;
+  /* text-shadow: 1px 1px #555; */
+  animation: fadeInAnimation ease 2s forwards;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-color: rgb(132, 184, 146);
+  width: 30%;
+  height: 200px;
   margin: 15px auto;
-  border: solid 1px rgb(72, 67, 82);
+  transform: translateY(25%);
+  /* border: solid 1px rgb(72, 67, 82); */
 
   text-align: center;
   /* border: 2px solid #333;
   border-style: dotted; */
   font-style: normal;
-  opacity: 1.0;
+  opacity: 0;
   transition: width 0.2s, opacity 0.2s;
+
+  transition: all 1s ease;
 }
 
-.box a {
+.card a {
+  display:inline;
+  height: 100%;
+  width:100%;
   font-weight:normal;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2rem;
+  line-height: 200px;
 }
 
-.box:hover {
+.card:hover {
   opacity: 0.6;
-  width: 41%;
+  width: 30.5%;
   /* transition: opacity 0.6s; */
   transition: opacity 0.6s, width 0.2s;
 }
 
-a:link { 
+.card1 {
+  background-image: url('paint1.jpg');
+}
+
+.card2 {
+  background-image: url('paint2.jpg');
+}
+
+.card3 {
+  background-image: url('paint3.jpg');
+}
+
+.row {
+  gap:30px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.banner-card {
+  position: absolute;
+  align-items: center;
+  background: rgba(256, 256, 256, 1.0);
+  background-size: cover;
+
+  width: 14%;
+  height: 30px;
+  margin: 15px auto;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgba(0,0,0,1.0);
+
+  opacity: 1;
+  transition: width 0.2s, opacity 0.2s;
+  z-index: 1;
+}
+
+.banner-card:hover {
+  opacity: 0.6;
+  width: 14.5%;
+  /* transition: opacity 0.6s; */
+  transition: opacity 0.6s, width 0.2s;
+}
+
+.header-link { 
+  opacity: 1.0;
+  text-decoration: none; 
+  color: #bbb;
+}
+.header-link:visited {
+  color: #bbb;
+  text-decoration: none;
+} 
+
+.card-link { 
+  display: inline-block;
   opacity: 1.0;
   text-decoration: none; 
   color: #fff;
 }
-a:visited {
+.card-link:visited {
   color: #fff;
+  text-decoration: none;
+} 
+
+.banner-card-link { 
+  opacity: 1.0;
+  text-decoration: none; 
+  color: #000;
+}
+.banner-card-link:visited {
+  color: #000;
+  text-decoration: none;
+} 
+
+.arrow {
+  background-image: url(dropdown_arrow.png);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  opacity: 1.0;
 }
 
-.arrow:active {
+.arrow:hover {
   animation: flipAnimation 2s ease-in-out;
+}
+
+.animate {
+  transform: translateY(-15%);
+  opacity: 1;
 }
 
 @keyframes flipAnimation {
